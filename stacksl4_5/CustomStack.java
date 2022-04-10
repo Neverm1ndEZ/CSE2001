@@ -18,7 +18,7 @@ public class CustomStack {
     }
 
     public int pop(){
-        if(isFull()){ System.out.println("Stack Overflow"); }
+        if(isEmpty()){ System.out.println("Stack Overflow"); }
         else { return arr[top--]; }
         return -1;
     }
