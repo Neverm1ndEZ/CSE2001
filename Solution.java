@@ -46,29 +46,23 @@ public class Solution {
     }
 
     public void game(Solution s1, Solution s2, int n, int maxSum) {
-//        int sum1 = 0, sum2 = 0;
-//        do {
-//            s1.pop();
-//            sum1 += s1.pop();
-//            s2.pop();
-//            sum2 += s1.pop();
-//        }while (sum1 >= maxSum || sum2 >= maxSum);
         int sum1 = 0, sum2 = 0;
-        for (int i = 0, j = 0; i < n && j < n ; i++, j++) {
-            sum1 += s1.pop();
-            sum2 += s2.pop();
-//
-//            if(sum1 >= maxSum){
-//
-//                // code
-//
-//            }
-//            else if(sum2 >= maxSum){
-//                System.out.println("Rita");
-//            }
-//            else{
-//                System.out.println("tie");
-//            }
+        for (int i = n-1; i >= 0; i--) {
+            if (sum1 < maxSum && sum2 < maxSum) {
+                sum1 += s1.pop();
+                sum2 += s2.pop();
+            }
+            if(sum1 > sum2){
+                System.out.println("Karan");
+                break;
+            }
+            else if(sum1 < sum2){
+                System.out.println("Rita");
+                break;
+            }
+            else{
+                System.out.println("tie");
+            }
         }
     }
 }
