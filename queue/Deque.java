@@ -46,11 +46,11 @@ public class Deque {
     }
 
     public void deleteFront(){
-        if(isEmpty()){ System.out.println("Deque is Empty, Underflow"); } // checking underflow condition
+        if(isEmpty()){ System.out.println("Deque is Empty, Underflow"); return; } // checking underflow condition
 
         else if (front == rear){ front = rear = -1; } // if front and rear are pointing to same index
 
-        else if (front == size - 1) { front = 0; } // circular array concept. setting front index to 0
+        else if (front == (size - 1)) { front = 0; } // circular array concept. setting front index to 0
 
         else { front++; }
 
@@ -63,7 +63,7 @@ public class Deque {
 
         else if (front == rear){ rear = front = -1; } // if front and rear are pointing to same index
 
-        else if (rear == 0) { rear = size - 1; } // circular array concept. setting front index to 0
+        else if (rear == 0) { rear = (size - 1); } // circular array concept. setting front index to 0
 
         else { rear--; }
 
