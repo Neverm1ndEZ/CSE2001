@@ -77,7 +77,7 @@ public class Deque {
     }
 
     public void deleteRear(){
-        if(isEmpty()){ System.out.println("Deque is Empty, Underflow"); } // checking underflow condition
+        if(isEmpty()){ System.out.println("Deque is Empty, Underflow"); return; } // checking underflow condition
         int val = arr[rear];
 
         if (front == rear){ rear = front = -1; } // if front and rear are pointing to same index
