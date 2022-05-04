@@ -30,6 +30,15 @@ public class Deque {
 
         arr[front] = item; // insertion
         //System.out.println(arr[front]); // confirmation
+
+        //worked on CT
+        /*
+            if (isFull()) { System.out.println("Dequeue Overflow"); return; }
+        else if (front == -1) { front = 0; rear = 0; }
+        else if (front == 0) { front = size - 1; }
+        else { front--; }
+        array[front] = item;
+         */
     }
 
     public void insertRear(int item){
@@ -43,31 +52,40 @@ public class Deque {
 
         arr[rear] = item; // insertion
         //System.out.println(arr[rear]); // confirmation
+
+        // worked on CT
+        /*
+            if (isFull()) {  System.out.println("Dequeue Overflow"); return; }
+        else if (front == -1) { front = 0; rear = 0; }
+        else if (rear == size - 1) { rear = 0; }
+        else { rear++; }
+        array[rear] = item;
+         */
     }
 
     public void deleteFront(){
         if(isEmpty()){ System.out.println("Deque is Empty, Underflow"); return; } // checking underflow condition
+        int val = arr[front];
 
-        else if (front == rear){ front = rear = -1; } // if front and rear are pointing to same index
+        if (front == rear){ front = rear = -1; } // if front and rear are pointing to same index
 
         else if (front == (size - 1)) { front = 0; } // circular array concept. setting front index to 0
 
         else { front++; }
 
-        int val = arr[front];
         System.out.println("Element deleted from the front is: "+val);
     }
 
     public void deleteRear(){
         if(isEmpty()){ System.out.println("Deque is Empty, Underflow"); } // checking underflow condition
+        int val = arr[rear];
 
-        else if (front == rear){ rear = front = -1; } // if front and rear are pointing to same index
+        if (front == rear){ rear = front = -1; } // if front and rear are pointing to same index
 
         else if (rear == 0) { rear = (size - 1); } // circular array concept. setting front index to 0
 
         else { rear--; }
 
-        int val = arr[rear];
         System.out.println("Element deleted from the front is: "+val);
     }
 
