@@ -1,4 +1,7 @@
-import java.util.*;
+package l20;
+
+import java.util.Scanner;
+
 public class Trendy_CA5 {
     class Node{
         int Code;
