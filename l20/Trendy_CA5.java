@@ -3,7 +3,7 @@ package l20;
 import java.util.Scanner;
 
 public class Trendy_CA5 {
-    class Node{
+    class Node {
         int Code;
         double Price;
         String Colour;
@@ -15,15 +15,16 @@ public class Trendy_CA5 {
             Colour = colour;
         }
     }
+
     Node head = null, tail = null;
 
-    boolean isListEmpty(){
+    boolean isListEmpty() {
         return head == null;
     }
 
-    public void addAtStart(int code, double price, String colour){
-        Node node = new Node(code,price,colour);
-        if(isListEmpty()) {
+    public void addAtStart(int code, double price, String colour) {
+        Node node = new Node(code, price, colour);
+        if (isListEmpty()) {
             head = node;
             tail = node;
         } else {
@@ -33,8 +34,8 @@ public class Trendy_CA5 {
         }
     }
 
-    public void addAtEnd(int code, double price, String colour){
-        Node node = new Node(code,price,colour);
+    public void addAtEnd(int code, double price, String colour) {
+        Node node = new Node(code, price, colour);
         if (isListEmpty()) {
             head = node;
         } else {
@@ -44,11 +45,11 @@ public class Trendy_CA5 {
         tail = node;
     }
 
-    public void deleteFirst(){
-        if (isListEmpty()){
+    public void deleteFirst() {
+        if (isListEmpty()) {
             System.out.println("List empty");
         } else {
-            if (head.next == null){
+            if (head.next == null) {
                 System.out.println(head.Code + " is deleted from the collection of garments");
                 head = head.next;
             } else {
@@ -59,11 +60,11 @@ public class Trendy_CA5 {
         }
     }
 
-    public void deleteLast(){
-        if (isListEmpty()){
+    public void deleteLast() {
+        if (isListEmpty()) {
             System.out.println("List empty");
         } else {
-            if (head.next == null){
+            if (head.next == null) {
                 System.out.println(head.Code + " is deleted from the collection of garments");
                 head = head.next;
             } else {
@@ -74,33 +75,33 @@ public class Trendy_CA5 {
         }
     }
 
-    public void showStart(){
+    public void showStart() {
         if (isListEmpty()) {
             System.out.println("Nothing to display");
         } else {
             Node curr = head;
             while (curr != null) {
-                System.out.print(curr.Code + "\t" + curr.Colour + "\t"+ curr.Price);
+                System.out.print(curr.Code + "\t" + curr.Colour + "\t" + curr.Price);
                 curr = curr.next;
             }
             System.out.println();
         }
     }
 
-    public void showEnd(){
+    public void showEnd() {
         if (isListEmpty()) {
             System.out.println("Nothing to display");
         } else {
             Node curr = tail;
             while (curr != null) {
-                System.out.print(curr.Code + "\t" + curr.Colour + "\t"+ curr.Price);
+                System.out.print(curr.Code + "\t" + curr.Colour + "\t" + curr.Price);
                 curr = curr.prev;
             }
             System.out.println();
         }
     }
 
-    public int countHowMany(String colour){
+    public int countHowMany(String colour) {
         return 0;
     }
 
@@ -147,7 +148,7 @@ public class Trendy_CA5 {
                     System.out.print("enter the colour of dress to count");
                     sc.nextLine();
                     colour = sc.nextLine();
-                    System.out.println("No. of "+colour+" colour dresses present are: "+tr.countHowMany(colour));
+                    System.out.println("No. of " + colour + " colour dresses present are: " + tr.countHowMany(colour));
                 }
                 default -> System.out.println("Enter right choice");
             }

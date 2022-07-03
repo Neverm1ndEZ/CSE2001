@@ -16,19 +16,6 @@ public class Queue {
     }
 
     //Dequeue from the front.
-    public void dequeue() {
-        /* Write code for required functionality here */
-        if(isEmpty()){
-            System.out.println("Queue is empty deletion not possible");
-            rear = null;
-        } else {
-            int data = front.data;
-            front = front.next;
-            System.out.println(data+" deleted from the queue");
-        }
-    }
-
-    //Enqueue operation at the rear end.
     public void enqueue(int data) {
         /* Write code for required functionality here */
         Node oldRear = rear;
@@ -42,6 +29,20 @@ public class Queue {
         }
         System.out.println(data+" added to the queue");
     }
+
+    public void dequeue() {
+        /* Write code for required functionality here */
+        if(isEmpty()){
+            System.out.println("Queue is empty deletion not possible");
+            rear = null;
+        } else {
+            int data = front.data;
+            front = front.next;
+            System.out.println(data+" deleted from the queue");
+        }
+    }
+
+    //Enqueue operation at the rear end.
 
     public void queueSize() {
         /* Write code for required functionality here */
